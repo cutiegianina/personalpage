@@ -1,0 +1,21 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#feed {
+	height: 100vh;
+	padding: 30px;
+	color: white;
+	overflow: auto;
+}
+
+#suggestions {
+	height: 100vh;
+	padding: 20px;
+	color: white;
+}
+
+.image-upload>input {
+  display: none;
+}
