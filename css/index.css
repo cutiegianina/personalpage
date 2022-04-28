@@ -19,3 +19,15 @@
 .image-upload>input {
   display: none;
 }
+
+#modal-style {
+	background-color: black;
+}
+
+.edit-profile-group {
+	margin-bottom: 10px;
+}
+
+#edit-profile-input {
+	padding-left: 10px;
+}
