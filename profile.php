@@ -164,21 +164,7 @@
 <div class="flex-column mb-auto bg-dark" style="min-width:300px; max-width: 700px; width: 700px;" id="feed">
   <div class="img-container" style="height: 150px; width: 150px;">
     <img src="img/profile-photo-blank.jpg" class="rounded-circle me-2 img-fluid">
-    <?php 
-        $id = $_SESSION['id'];
-        $stmt = $conn->prepare('SELECT * FROM user');
-        $stmt->execute();
-        $imagelist = $stmt->fetchAll();
-       
-        foreach($imagelist as $image) {
-        ?>
-             
-        <img src="<?=$image['image']?>"
-          title = "<?=$image['name']?>"
-          width='200' height='200'>
-        <?php
-        }
-    ?> 
+    
   </div>
   <p class="edit-profile float-right" style="border-style: ridge; border-width: thin; border-radius:  15px; padding: 5px;border-color: white;">
       <a href="#" style="text-decoration: none; color: white;" data-toggle="modal" data-target="#edit-profile-modal"> Edit profile </a>
