@@ -19,8 +19,10 @@
           $get_first .= " "; 
           $get_first .= $row['last_name'];
           $_SESSION['id'] = $row['id'];
+          $get_image = $row['image'];
      }
          $_SESSION['full_name'] = $get_first;
+         $_SESSION['image'] = $get_image;
          header("location:home.php");  
     }  
     else  

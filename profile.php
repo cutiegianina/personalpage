@@ -163,7 +163,10 @@
 
 <div class="flex-column mb-auto bg-dark" style="min-width:300px; max-width: 700px; width: 700px;" id="feed">
   <div class="img-container" style="height: 150px; width: 150px;">
-    <img src="img/profile-photo-blank.jpg" class="rounded-circle me-2 img-fluid">
+
+
+        <img src="upload/<?php echo $_SESSION['image']; ?>" class="rounded-circle me-2 img-fluid" style="height: 150px; width: 150px;"> 
+
     
   </div>
   <p class="edit-profile float-right" style="border-style: ridge; border-width: thin; border-radius:  15px; padding: 5px;border-color: white;">
@@ -208,7 +211,7 @@
           <div class="img-container" style="height: 150px; width: 150px;">        
               <img src="img/profile-photo-blank.jpg" class="rounded-circle me-2 img-fluid">
           </div>
-          <input id="file-input" name="files[]" accept="image/*" type="file" style="display: none;" multiple/>
+          <input id="file-input" name="txt_file" accept="image/*" type="file" style="display: none;" multiple/>
           </label>
           <div class="edit-profile-group">
             <input type="text" name="first_name" placeholder="First Name" id="edit-profile-input" required/>
