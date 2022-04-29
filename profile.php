@@ -39,6 +39,7 @@
           font-size: 3.5rem;
         }
       }
+      
     </style>
 
     
@@ -209,15 +210,13 @@
         <div class="modal-body">
           <label for="file-input" style="cursor: pointer;">
           <div class="img-container" style="height: 150px; width: 150px;">        
-              <img src="img/profile-photo-blank.jpg" class="rounded-circle me-2 img-fluid">
+              <img src="upload/<?php echo $_SESSION['image'];?>" class="rounded-circle me-2 img-fluid" style="height: 120px; width: 120px;">
           </div>
           <input id="file-input" name="txt_file" accept="image/*" type="file" style="display: none;" multiple/>
           </label>
           <div class="edit-profile-group">
-            <input type="text" name="first_name" placeholder="First Name" id="edit-profile-input" required/>
-          </div>
-          <div class="edit-profile-group">
-            <input type="text" name="last_name" placeholder="Last Name" id="edit-profile-input" required/>
+            <input type="text" name="first_name" placeholder="First Name" class = "no-outline" required/>
+            <input type="text" name="last_name" placeholder="Last Name" class = "no-outline" required/>
           </div>
         </div>
         <div class="modal-footer">
