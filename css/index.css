@@ -31,3 +31,7 @@
 #edit-profile-input {
 	padding-left: 10px;
 }
+
+.no-outline {
+	outline: none;
+}

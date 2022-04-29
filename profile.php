@@ -150,7 +150,7 @@
     <hr>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+        <img src="upload/<?php echo $_SESSION['image']; ?>" class="rounded-circle me-2" style="height: 32px; width:32px;">
         <strong><?php echo $_SESSION["full_name"]; ?></strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -206,13 +206,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="editprofile.php" method="POST" enctype="multipart/form-data">
+      <form action="editprofile.php" method="POST" enctype="multipart/form-data" runat="server">
         <div class="modal-body">
           <label for="file-input" style="cursor: pointer;">
           <div class="img-container" style="height: 150px; width: 150px;">        
-              <img src="upload/<?php echo $_SESSION['image'];?>" class="rounded-circle me-2 img-fluid" style="height: 120px; width: 120px;">
+              <img src="upload/<?php echo $_SESSION['image'];?>" id = "output" class="rounded-circle me-2 img-fluid" style="height: 120px; width: 120px;">
           </div>
-          <input id="file-input" name="txt_file" accept="image/*" type="file" style="display: none;" multiple/>
+          <input id="file-input" name="txt_file" accept="image/*" onchange="loadFile(event)" type="file" style="display: none;" multiple />
           </label>
           <div class="edit-profile-group">
             <input type="text" name="first_name" placeholder="First Name" class = "no-outline" required/>
@@ -265,6 +265,15 @@ new Vue({
       }
   }
   });
+
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
 </script>
-  </body>
+
+</body>
 </html>
